@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="home_container">
+      <nav class="nav">
+        <div class="logo">
+          <img src="./images/whole.png" alt="logo" />
+        </div>
+        <div class="nav_search_box">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search for your favorite groups in ATG"
+          />
+        </div>
+        <div class="auth" onclick="openModal()">
+          Create account.
+          <span style="color: #4c6ff5; font-weight: bold">It's free!!</span>
+        </div>
+
+        <!-- register  -->
+        <div id="registerModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <p style="background-color: #effff4">
+              Let's learn, share & inspire each other with our passion for
+              computer engineering. Sign up now 🤘🏼
+            </p>
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal_header">
+              <h2>Create Account</h2>
+              <p>
+                Already have an account?
+                <span
+                  onclick="displayLoginModal()"
+                  style="color: #2f6ce5; cursor: pointer"
+                  >Sign In</span
+                >
+              </p>
+            </div>
+            <div class="modal_grid_container">
+              <div class="modal_grid_item">
+                <div class="form-container">
+                  <form>
+                    <div
+                      class="form_grid"
+                      style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 3px;
+                      "
+                    >
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          id="firstname"
+                          name="firstname"
+                          placeholder="Enter your first name"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          id="lastname"
+                          name="lastname"
+                          placeholder="Enter your last name"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        id="confirm_password"
+                        name="confirm_password"
+                        placeholder="Confirm your password"
+                      />
+                    </div>
+                    <button class="button-blue" type="submit">
+                      Create Account
+                    </button>
+                    <button class="button-facebook" type="button">
+                      <img src="./images/fb.png" alt="" /> Sign up with Facebook
+                    </button>
+                    <button class="button-google" type="button">
+                      <img src="./images/google.png" alt="" /> Sign up with
+                      Google
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="modal_grid_item">
+                <img src="./images/login_heart.png" alt="" />
+                <p>
+                  By signing up, you agree to our Terms & conditions, Privacy
+                  policy
+                </p>
+              </div>
+            </div>
+            <div class="modal_grid_container_mobile">
+              <div class="modal_grid_item">
+                <div class="form-container">
+                  <form>
+                    <div
+                      class="form_grid"
+                      style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 3px;
+                      "
+                    >
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          id="firstname"
+                          name="firstname"
+                          placeholder="Enter your first name"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          id="lastname"
+                          name="lastname"
+                          placeholder="Enter your last name"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        id="confirm_password"
+                        name="confirm_password"
+                        placeholder="Confirm your password"
+                      />
+                    </div>
+                    <button class="button-blue" type="submit">
+                      Create Account
+                    </button>
+                    <button class="button-facebook" type="button">
+                      <img src="./images/fb.png" alt="" /> Sign up with Facebook
+                    </button>
+                    <button class="button-google" type="button">
+                      <img src="./images/google.png" alt="" /> Sign up with
+                      Google
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- login  -->
+        <div id="loginModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <p style="background-color: #effff4">
+              Let's learn, share & inspire each other with our passion for
+              computer engineering. Sign up now 🤘🏼
+            </p>
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal_header">
+              <h2>Sign In</h2>
+              <p>
+                Don’t have an account yet?
+                <span
+                  onclick="openModal()"
+                  style="color: #2f6ce5; cursor: pointer"
+                  >Create new for free!</span
+                >
+              </p>
+            </div>
+            <div class="modal_grid_container">
+              <div class="modal_grid_item">
+                <div class="form-container">
+                  <form>
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                      />
+                    </div>
+                    <button class="button-blue" type="submit">Sign In</button>
+                    <button class="button-facebook" type="button">
+                      <img src="./images/fb.png" alt="" /> Sign in with Facebook
+                    </button>
+                    <button class="button-google" type="button">
+                      <img src="./images/google.png" alt="" /> Sign in with
+                      Google
+                    </button>
+                    <p>Forgot Password?</p>
+                  </form>
+                </div>
+              </div>
+              <div class="modal_grid_item">
+                <img src="./images/login_heart.png" alt="" />
+                <p>
+                  By signing up, you agree to our Terms & conditions, Privacy
+                  policy
+                </p>
+              </div>
+            </div>
+            <!-- modal_grid_container_mobile  -->
+            <div class="modal_grid_container_mobile">
+              <div class="form-container">
+                <form>
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="Enter your password"
+                    />
+                  </div>
+                  <button class="button-blue" type="submit">Sign In</button>
+                  <button class="button-facebook" type="button">
+                    <img src="./images/fb.png" alt="" /> Sign in with Facebook
+                  </button>
+                  <button class="button-google" type="button">
+                    <img src="./images/google.png" alt="" /> Sign in with Google
+                  </button>
+                  <p style="color: black; font-size: 11px">Forgot Password?</p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="loginModalMobile">
+            
+        </div> -->
+
+        <div class="nav_icons">
+          <ul>
+            <i class="fas fa-square"></i>
+            <i class="fa fa-search"></i>
+            <i class="fas fa-sign-in" style="cursor: pointer;" onclick="openModal()"></i>
+          </ul>
+        </div>
+      </nav>
+      <div class="top_container">
+        <div class="image_overlay">
+          <div class="top">
+            <i class="fa fa-arrow-left"></i>
+            <button class="btn">Join Group</button>
+          </div>
+          <div class="bottom">
+            <h2>Computer Engineering</h2>
+            <p>142,765 Computer Engineers follow this</p>
+          </div>
+        </div>
+      </div>
+      <div class="filter_container">
+        <h3>Posts(368)</h3>
+        <!-- <label for="filter">Filter: </label> -->
+        <div class="filter_div">
+          <select name="filter" id="filter">
+            <option value="all">All</option>
+            <option value="all">All</option>
+            <option value="all">All</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="main_container_desktop">
+        <div
+          class="desktop_tab"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'allPost')">
+              All Post
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'article')">
+              Article
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'event')">
+              Event
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'education')">
+              Education
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'job')">
+              Job
+            </button>
+          </div>
+          <div class="desktop_filter">
+            <div class="desktop_filter_div">
+              <select name="filter" id="filter"></select>
+            </div>
+            <button class="desktop_filter_btn">
+              <i class="fas fa-group"></i>
+              Join a Group
+            </button>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="grid-item grid-item-colspan">
+            <div class="posts">
+              <div class="post">
+                <div class="post_image">
+                  <img src="./images/postfirst.png" alt="" />
+                </div>
+                <div class="content" style="padding: 10px 20px">
+                  <h5><i class="fas fa-pen"></i> Article</h5>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                    "
+                  >
+                    <h3>
+                      What if famous brands had regular fonts? Meet
+                      RegulaBrands!
+                    </h3>
+                    <i class="fas fa-ellipsis-h" style="cursor: pointer;"></i>
+                  </div>
+                  <p>
+                    I’ve worked in UX for the better part of a decade. From now
+                    on, I plan to rei…
+                  </p>
+                </div>
+                <div class="author">
+                  <div style="display: flex; gap: 15px">
+                    <img src="./images/auth1.png" alt="" />
+                    <div style="display: flex; flex-direction: column">
+                      <span style="font-weight: bold">Sarthak Kamra</span>
+                      <span>Views: 1.9k</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button><i class="fas fa-share-nodes"></i> Share</button>
+                  </div>
+                </div>
+              </div>
+              <div class="post">
+                <div class="post_image">
+                  <img src="./images/postsecond.png" alt="" />
+                </div>
+                <div class="content" style="padding: 10px 20px">
+                  <h5>🔬️ Education</h5>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      gap: 15px;
+                    "
+                  >
+                    <h3>
+                      Tax Benefits for Investment under National Pension Scheme
+                      launched by Government
+                    </h3>
+                    <i class="fas fa-ellipsis-h" style="cursor: pointer;"></i>
+                  </div>
+                  <p>
+                    I’ve worked in UX for the better part of a decade. From now
+                    on, I plan to rei…
+                  </p>
+                </div>
+                <div class="author">
+                  <div style="display: flex; gap: 15px">
+                    <img src="./images/auth2.png" alt="" />
+                    <div style="display: flex; flex-direction: column">
+                      <span style="font-weight: bold">Sarah West</span>
+                      <span>Views: 1.9k</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button><i class="fas fa-share-nodes"></i> Share</button>
+                  </div>
+                </div>
+              </div>
+              <div class="post">
+                <div class="post_image">
+                  <img src="./images/postthird.png" alt="" />
+                </div>
+                <div class="content" style="padding: 10px 20px">
+                  <h5>🗓️ Meetup</h5>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      margin: 10px 0;
+                    "
+                  >
+                    <h3>Finance & Investment Elite Social Mixer @Lujiazui</h3>
+                    <i class="fas fa-ellipsis-h" style="cursor: pointer;"></i>
+                  </div>
+                  <div style="display: flex; gap: 20px">
+                    <p><i class="fas fa-calendar"></i> Fri, 12 Oct, 2018</p>
+                    <p><i class="fas fa-location"></i> Ahmedabad, India</p>
+                  </div>
+                  <button
+                    style="
+                      width: 100%;
+                      margin-top: 10px;
+                      color: #e56135;
+                      border: 0.7px dashed #a9aeb8;
+                      border-radius: 8px;
+                      padding: 10px;
+                      cursor: pointer;
+                      background-color: #FFFFFF;
+                    "
+                  >
+                    Visit Website
+                  </button>
+                </div>
+                <div class="author">
+                  <div style="display: flex; gap: 15px">
+                    <img src="./images/auth3.png" alt="" />
+                    <div style="display: flex; flex-direction: column">
+                      <span style="font-weight: bold">Ronal Jones</span>
+                      <span>Views: 1.4k</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button><i class="fas fa-share-nodes"></i> Share</button>
+                  </div>
+                </div>
+              </div>
+              <div class="post">
+                <div class="content" style="padding: 10px 20px">
+                  <h5>💼️ Job</h5>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      margin: 10px 0;
+                    "
+                  >
+                    <h3>Software Developer</h3>
+                    <i class="fas fa-ellipsis-h" style="cursor: pointer;"></i>
+                  </div>
+                  <div style="display: flex; gap: 20px">
+                    <p><i class="fas fa-bag-shopping"></i> Innovaccer Analytics Private Ltd.</p>
+                    <p><i class="fas fa-location"></i> Noida, India</p>
+                  </div>
+                  <button
+                    style="
+                      width: 100%;
+                      margin-top: 10px;
+                      color: #02B875;
+                      border: 0.7px dashed #a9aeb8;
+                      border-radius: 8px;
+                      padding: 10px;
+                      cursor: pointer;
+                      background-color: #FFFFFF;
+                    "
+                  >
+                  Apply on Timesjobs
+                  </button>
+                </div>
+                <div class="author">
+                  <div style="display: flex; gap: 15px">
+                    <img src="./images/auth4.png" alt="" />
+                    <div style="display: flex; flex-direction: column">
+                      <span style="font-weight: bold">Joseph Gray</span>
+                      <span>Views: 1.4k</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button><i class="fas fa-share-nodes"></i> Share</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item grid-item2">
+            <div class="location-input">
+              <i class="fas fa-map-marker-alt"></i>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                value="Noida, India"
+                placeholder="Enter a location"
+              />
+              <i class="fas fa-search"></i>
+              <!-- </input> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
